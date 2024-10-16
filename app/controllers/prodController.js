@@ -6,6 +6,7 @@ exports.create = (req, res) => {
     nom: req.body.nom,
     description: req.body.description,
     prix: req.body.prix,
+    images: req.body.images,
   });
 
   produit

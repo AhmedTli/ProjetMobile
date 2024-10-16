@@ -3,9 +3,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/", {
-    useNewUrlParser: true
-}).then(() => {
+
+mongoose.connect("mongodb://localhost:27017/")
+.then(() => {
     console.log("Successfully connected to the database");    
 }).catch(err => {
     console.log('Could not connect to the database. Error...', err);
@@ -22,6 +22,9 @@ app.get('/', (req, res) => {
 });
 require('./app/routes/app.routes.js')(app);
 require('./app/routes/Productroutes.js')(app);
+require('./app/routes/Commanderoutes.js')(app);
+
+
 let PORT = 8080
 
 app.listen(PORT, () => {

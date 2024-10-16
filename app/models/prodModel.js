@@ -5,6 +5,7 @@ const AppSchema = mongoose.Schema(
     nom : String,
     description : String,
     prix : Number,
+    images : [String],
    }
 );
 
